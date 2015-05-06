@@ -19,5 +19,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="bval-core-0.5" level="project" />
+    <orderEntry type="library" name="postgresql-9.4-1201.jdbc41" level="project" />
   </component>
 </module>
