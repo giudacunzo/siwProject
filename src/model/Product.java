@@ -27,6 +27,7 @@ public class Product {
     private Integer remainingQuantity;
 
     @Column(nullable = false)
+    @ManyToMany(mappedBy = "providedProducts")
     private List<Provider> providers;
 
 

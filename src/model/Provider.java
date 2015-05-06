@@ -22,6 +22,9 @@ public class Provider {
     private String phoneNumber;
 
     @Column(nullable = false)
+    @OneToMany
+    @JoinColumn(name = "address_id")
     private Address address;
+
     private String email;
 }
