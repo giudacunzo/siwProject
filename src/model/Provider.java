@@ -17,7 +17,7 @@ public class Provider {
     private List<Product> providedProducts;
 
     @Column(nullable = false)
-    private String pIva;
+    private String vatNumber;
 
     private String phoneNumber;
 
@@ -27,4 +27,63 @@ public class Provider {
     private Address address;
 
     private String email;
+
+    public Provider(List<Product> providedProducts, String vatNumber, String phoneNumber, Address address, String email) {
+        this.providedProducts = providedProducts;
+        this.vatNumber = vatNumber;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.email = email;
+    }
+
+    public Provider() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Product> getProvidedProducts() {
+        return providedProducts;
+    }
+
+    public void setProvidedProducts(List<Product> providedProducts) {
+        this.providedProducts = providedProducts;
+    }
+
+    public String getVatNumber() {
+        return vatNumber;
+    }
+
+    public void setVatNumber(String vatNumber) {
+        this.vatNumber = vatNumber;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
