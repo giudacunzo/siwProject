@@ -1,3 +1,3 @@
 package model;
 
-public class Utente{}
+public abstract class Utente{}
