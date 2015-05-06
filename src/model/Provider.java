@@ -13,7 +13,7 @@ public class Provider {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false)
+    @ManyToMany
     private List<Product> providedProducts;
 
     @Column(nullable = false)
@@ -22,7 +22,7 @@ public class Provider {
     private String phoneNumber;
 
     @Column(nullable = false)
-    @OneToMany
+    @OneToOne
     @JoinColumn(name = "address_id")
     private Address address;
 

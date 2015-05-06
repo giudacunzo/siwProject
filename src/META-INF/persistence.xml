@@ -7,13 +7,17 @@
         <class>model.User</class>
         <class>model.Product</class>
         <class>model.Provider</class>
+        <class>model.OrderLine</class>
+        <class>model.Order</class>
+        <class>model.Administrator</class>
+        <class>model.Customer</class>
         <properties>
             <property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver" />
             <property name="openjpa.ConnectionUserName" value="postgres" />
             <property name="openjpa.ConnectionPassword" value="postgres" />
             <property name="openjpa.ConnectionURL" value="jdbc:postgresql://localhost:5432/siwPrj" />
             <property name="openjpa.jdbc.DBDictionary" value="postgres" />
-            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(SchemaAction=add,ForeignKeys=true)" />
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(SchemaAction=add,SchemaAction=deleteTableContents,ForeignKeys=true)" />
             <property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE"/>
             <property name="openjpa.jdbc.MappingDefaults" value="ForeignKeyDeleteAction=restrict,JoinForeignKeyDeleteAction=restrict"/>
         </properties>

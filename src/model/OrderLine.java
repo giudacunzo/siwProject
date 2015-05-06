@@ -20,6 +20,7 @@ public class OrderLine {
     private Order order;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @JoinColumn(name = "product_id")
     private Product product;
 
     public OrderLine(Long unitprice, Long quantity, Order order, Product product) {

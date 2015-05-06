@@ -9,4 +9,7 @@ public class Administrator extends User {
     public Administrator(String name, String lastname, Date birthDate, String email, Address address) {
         super(name, lastname, birthDate, email, address);
     }
+
+    public Administrator() {
+    }
 }

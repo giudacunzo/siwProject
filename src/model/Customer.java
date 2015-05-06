@@ -15,6 +15,9 @@ public class Customer extends User{
         super(name, lastname, birthDate, email, address);
     }
 
+    public Customer() {
+    }
+
     public List<Order> getOrders() {
         return orders;
     }

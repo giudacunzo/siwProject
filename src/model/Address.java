@@ -24,12 +24,6 @@ public class Address {
 
     private String country;
 
-    @OneToMany(mappedBy = "address")
-    private List<User> customerList;  //da rivedere per futuri problemi di tipo statico
-
-    @OneToMany(mappedBy = "address")
-    private List<Provider> providers;
-
     public Address(String street, String city, String state, Long zipcode, String country) {
         this.street = street;
         this.city = city;
@@ -88,20 +82,4 @@ public class Address {
     public void setCountry(String country) {
         this.country = country;
     }
-
-    public List<User> getCustomerList() {
-        return customerList;
     }
-
-    public void setCustomerList(List<User> customerList) {
-        this.customerList = customerList;
-    }
-
-    public List<Provider> getProviders() {
-        return providers;
-    }
-
-    public void setProviders(List<Provider> providers) {
-        this.providers = providers;
-    }
-}

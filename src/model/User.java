@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @MappedSuperclass //da provare e vedere effetti
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class User {
 
     @Id
@@ -22,7 +23,7 @@ public abstract class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @OneToMany
+    @OneToOne
     @JoinColumn(name = "address_id")
     private Address address;
 
@@ -32,6 +33,9 @@ public abstract class User {
         this.birthDate = birthDate;
         this.email = email;
         this.address = address;
+    }
+
+    public User() {
     }
 
     public String getName() {
