@@ -1,0 +1,9 @@
+Caso d'uso UC4: inserimento prodotti nel catalogo
+
+Attore primario: amministrazione
+
+Scenario principale:
+L'amministratore inserisce un nuovo prodotto nel catalogo specificandone i dettagli
+Il sistema registra il prodotto
+I punti precedenti vengono ripetuti fino a che necessario
+Precondizioni: l'amministratore è identificato e autenticato
