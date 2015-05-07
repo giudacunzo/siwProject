@@ -1,5 +1,6 @@
 package model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.Date;
@@ -8,7 +9,7 @@ import java.util.List;
 @Entity
 public class Customer extends User{
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer",cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private List<Order> orders;
 
     public Customer(String name, String lastname, Date birthDate, String email, Address address) {

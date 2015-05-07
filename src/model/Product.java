@@ -26,7 +26,7 @@ public class Product {
     @Column(nullable = false)
     private Integer remainingQuantity;
 
-    @ManyToMany(mappedBy = "providedProducts")
+    @ManyToMany(mappedBy = "providedProducts", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<Provider> providers;
 
     @OneToMany(mappedBy = "product")
