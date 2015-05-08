@@ -1,0 +1,13 @@
+Caso d'uso UC0: registrazione nuovo cliente
+
+Attore primario: nuovo cliente
+
+Scenario principale:
+Il sistema presenta all'utente la form di registrazione
+l'utente inserisce i suoi dati
+il sistema registra il nuovo utente nel database
+l'utente può loggarsi nel sistema
+
+Eccezioni:
+se l'utente inserisce credenziali non valide o già esistenti viene ripresentata la form di registrazione con i messaggi di errore
+riguardanti i campi errati

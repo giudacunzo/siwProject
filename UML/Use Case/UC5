@@ -1,0 +1,8 @@
+Caso d'uso UC5: recupera ordine cliente
+
+Attore primario: amministrazione
+
+Scenario principale:
+L’amministratore fornisce l'id di un ordine
+Il sistema mostra all’amministratore i dati del cliente che ha effettuato l’ordine
+Precondizioni: l’amministratore è identificato e autenticato

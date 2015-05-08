@@ -73,7 +73,6 @@ public class Main {
 
         o1.setOrderLines(orderlineList);
 
-
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		em.persist(product2);

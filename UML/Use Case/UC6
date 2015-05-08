@@ -1,0 +1,14 @@
+Caso d'uso UC6: evasione ordine
+
+Attore primario: amministrazione
+
+Scenario principale:
+Il sistema presenta all'amministratore gli ordini chiusi, ma non evasi
+L'amministratore sceglie un ordine
+Il sistema evade l'ordine: aggiorna l'ordine inserendo la data di spedizione e aggiorna la quantità deiprodotti in magazzino (sottraendo la quantità di prodotti usati per l'ordine)
+
+Precondizioni:
+l'amministratore è identificato e autenticato
+
+Eccezioni:
+alcuni prodotti potrebbero non essere presenti in magazzino nella quantità specificata dall'ordine. In questo caso l'ordine rimane in sospeso

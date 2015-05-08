@@ -1,0 +1,15 @@
+Caso d'uso UC2: effettua ordine
+
+Attore primario: cliente (utente registrato)
+
+Scenario principale di successo:
+Il cliente crea un ordine
+Il cliente consulta il catalogo dei prodotti
+Il cliente sceglie un prodotto e aggiunge codice e quantità del prodotto scelto all'ordine
+Il sistema imposta il prezzo unitario del prodotto scelto al prezzo corrente di listino
+Il sistema registra la riga ordine
+Il cliente ripete i due passi precedenti finché necessario
+Il cliente "chiude" l'ordine
+Il sistema registra l'ordine
+
+Precondizioni: il cliente è identificato e autenticato

@@ -1,0 +1,12 @@
+Caso d'uso UC3: consulta i propri ordini
+
+Attore primario: cliente
+
+Scenario principale:
+Il cliente consulta l'elenco dei propri ordini
+Il sistema mostra al cliente l'elenco dei suoi ordini
+Il cliente chiede il dettaglio di un ordine
+Il sistema mostra il dettaglio dell'ordine
+Il cliente ripete i due passi precedenti finché necessario
+
+Precondizioni: il cliente è identificato e autenticato
