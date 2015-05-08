@@ -5,7 +5,7 @@ import java.util.Date;
 
 @MappedSuperclass //da provare e vedere effetti
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class User {
+public class User {
 
     @Id
     @GeneratedValue
@@ -23,7 +23,7 @@ public abstract class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @OneToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "address_id")
     private Address address;
 
