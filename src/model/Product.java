@@ -16,7 +16,7 @@ public class Product {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String code;
 
     private String description;
@@ -26,7 +26,7 @@ public class Product {
     @Column(nullable = false)
     private Integer remainingQuantity;
 
-    @ManyToMany(mappedBy = "providedProducts")
+    @ManyToMany(mappedBy = "providedProducts", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<Provider> providers;
 
     @OneToMany(mappedBy = "product")
