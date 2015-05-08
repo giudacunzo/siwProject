@@ -22,7 +22,7 @@ public class Provider {
     private String phoneNumber;
 
     @Column(nullable = false)
-    @OneToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "address_id")
     private Address address;
 
