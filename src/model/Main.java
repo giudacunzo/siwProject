@@ -36,8 +36,11 @@ public class Main {
 
 		Address address = new Address("vasca navale", "Roma", "Italia", 875L, "boh");
 		User u1 = new Customer("fabio","sola",new Date(),"ciao@ciao.it", address);
+        u1.setRegistrationDate(new Date());
 		User u3 = new Customer("giulio","verdi",new Date(),"ciao@boh.it", address);
+        u3.setRegistrationDate(new Date());
 		User u2 = new Administrator("giuseppe","garibaldi",new Date(),"a@it.it", new Address("pincherle","Roma","Italia",456L,"nonso"));
+        u2.setRegistrationDate(new Date());
 
         Provider provider = new Provider(providedProducts,"545346","656868",address,"ciao@hi.it");
         List<Provider> providers = new ArrayList<>();

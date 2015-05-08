@@ -14,14 +14,18 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
 
+    @Column(nullable = false)
     private String street;
 
+    @Column(nullable = false)
     private String city;
 
+    @Column(nullable = false)
     private String state;
 
     private Long zipcode;
 
+    @Column(nullable = false)
     private String country;
 
     public Address(String street, String city, String state, Long zipcode, String country) {

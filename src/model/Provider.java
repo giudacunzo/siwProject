@@ -26,6 +26,7 @@ public class Provider {
     @JoinColumn(name = "address_id")
     private Address address;
 
+    @Column(nullable = false,unique = true)
     private String email;
 
     public Provider(List<Product> providedProducts, String vatNumber, String phoneNumber, Address address, String email) {

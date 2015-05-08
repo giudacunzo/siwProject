@@ -4,8 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @MappedSuperclass //da provare e vedere effetti
-@Inheritance(strategy = InheritanceType.JOINED)
-public abstract class User {
+public class User {
 
     @Id
     @GeneratedValue
@@ -17,7 +16,10 @@ public abstract class User {
     @Column(nullable = false)
     private String lastname;
 
+    @Column(nullable = false)
     private Date birthDate;
+
+    @Column(nullable = false)
     private Date registrationDate;
 
     @Column(nullable = false, unique = true)

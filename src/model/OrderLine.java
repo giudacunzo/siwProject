@@ -17,6 +17,7 @@ public class OrderLine {
     private Long quantity;
 
     @ManyToOne
+    @Column(nullable = false)
     private Order order;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
