@@ -11,7 +11,7 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("siwprj");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("siwprjtest");
 		EntityManager em = emf.createEntityManager();
 
 		Product product = new Product();
@@ -41,6 +41,8 @@ public class Main {
         u3.setRegistrationDate(new Date());
 		User u2 = new Administrator("giuseppe","garibaldi",new Date(),"a@it.it", new Address("pincherle","Roma","Italia",456L,"nonso"));
         u2.setRegistrationDate(new Date());
+        User u4 = new Customer("giulio","verdi",new Date(),"ciao@boh.it", address);
+        u4.setRegistrationDate(new Date());
 
         Provider provider = new Provider(providedProducts,"545346","656868",address,"ciao@hi.it");
         List<Provider> providers = new ArrayList<>();
@@ -79,6 +81,7 @@ public class Main {
 		em.persist(u1);
 		em.persist(u2);
 		em.persist(u3);
+        em.persist(u4);
 		tx.commit();
 
 		em.close();
