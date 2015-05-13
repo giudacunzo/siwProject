@@ -7,8 +7,8 @@ import java.util.Date;
 public class User {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long Id;
 
     @Column(nullable = false)
     private String name;
@@ -22,11 +22,12 @@ public class User {
     @Column(nullable = false)
     private Date registrationDate;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String email;
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "address_id")
+    @Column(nullable = true)
     private Address address;
 
     public User(String name, String lastname, Date birthDate, String email, Address address) {
@@ -38,6 +39,14 @@ public class User {
     }
 
     public User() {
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getName() {

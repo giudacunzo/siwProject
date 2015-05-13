@@ -24,39 +24,48 @@
         <div id="contenitoreForm" class="container col-md-offset-4 col-md-4">
             <h:form styleClass="form">
                 <div class="form-group">
-                        <%--<label>Name</label>--%>
                     <h:outputLabel for="name" value="Name"/>
-                    <h:inputText id="name" styleClass="form-control"/>
+                    <h:inputText id="name" styleClass="form-control" label="Name" value="#{customerControllerBean.name}"
+                            required="true"/>
+                    <h:message for="name" styleClass="alert-danger"/>
                 </div>
                 <div class="form-group">
-                        <%--<label>Last Name</label>--%>
                     <h:outputLabel for="lastName" value="Last Name"/>
-                    <h:inputText id="lastName" styleClass="form-control" />
+                    <h:inputText id="lastName" styleClass="form-control" label="Last Name" value="#{customerControllerBean.lastName}"
+                            required="true"/>
+                    <h:message for="lastName" styleClass="alert-danger"/>
                 </div>
                 <div class="form-group">
-                        <%--<label>BirthDate</label>--%>
                     <h:outputLabel for="birthDate" value="BirthDate"/>
-                    <h:inputText id="birthDate" styleClass="form-control" required="true" label="Birth Date"/>
+                    <h:inputText id="birthDate" styleClass="form-control" label="Birth Date" value="#{customerControllerBean.birthDate}"
+                            required="true"
+                            converter="javax.faces.DateTime"/>
                     <h:message for="birthDate" styleClass="alert-danger"/>
                 </div>
 
                 <div class="form-group">
-                        <%--<label>Email address</label>--%>
                     <h:outputLabel for="email" value="Email address"/>
-                    <h:inputText id="email" styleClass="form-control" required="true" label="Email"/>
+                    <h:inputText id="email" styleClass="form-control" label="Email" value="#{customerControllerBean.email}"
+                            required="true" />
                     <h:message for="email" styleClass="alert-danger"/>
                 </div>
 
                 <div class="form-group">
-                        <%--<label>Password</label>--%>
                     <h:outputLabel for="password" value="Password"/>
-                    <h:inputSecret id="password" styleClass="form-control"/>
+                    <h:inputSecret id="password" styleClass="form-control" label="Password" value="#{customerControllerBean.password}"
+                            required="true" />
+                    <h:message for="password" styleClass="alert-danger"/>
                 </div>
                 <h:commandButton value="Submit" styleClass="btn btn-primary" action="#{customerControllerBean.createCustomer}"/>
 
             </h:form>
         </div>
     </div>
+    <%--<div>--%>
+    <%--<h:form>--%>
+        <%--<h:commandButton value="prova" action="?#{customerControllerBean.displayCustomers}"/>--%>
+    <%--</h:form>--%>
+    <%--</div>--%>
 </f:view>
 
 <!-- Latest compiled and minified JavaScript -->
