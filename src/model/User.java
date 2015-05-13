@@ -17,13 +17,18 @@ public class User {
     private String lastname;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date birthDate;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date registrationDate;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
+
+    @Column(nullable = false)
+    private String password;
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "address_id")
@@ -36,6 +41,15 @@ public class User {
         this.birthDate = birthDate;
         this.email = email;
         this.address = address;
+    }
+
+    public User(String name, String lastname, Date birthDate, Date registrationDate, String email, String password) {
+        this.name = name;
+        this.lastname = lastname;
+        this.birthDate = birthDate;
+        this.registrationDate = registrationDate;
+        this.email = email;
+        this.password = password;
     }
 
     public User() {
@@ -95,6 +109,14 @@ public class User {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

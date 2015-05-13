@@ -1,11 +1,15 @@
 import model.Address;
 import model.Customer;
 import model.CustomerFacade;
+import model.PasswordHash;
 
 import javax.annotation.Resource;
 import javax.ejb.EJB;
+import javax.ejb.EJBTransactionRolledbackException;
 import javax.ejb.TransactionAttribute;
 import javax.faces.bean.ManagedBean;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.Date;
 
 /**
@@ -13,7 +17,7 @@ import java.util.Date;
  *
  */
 @ManagedBean
-public class CustomerControllerBean {
+public class CustomerController {
 
     @EJB(beanName = "cFacade")
     private CustomerFacade facade;
@@ -25,14 +29,26 @@ public class CustomerControllerBean {
     private String password;
     private Customer cust;
 
-    public CustomerControllerBean() {
+    public CustomerController() {
     }
 
-    @TransactionAttribute
     public String createCustomer(){
-        Address address = new Address("vasca","navale","roma",350L,"boh");
-        Customer customer = facade.createCustomer(name, lastName, new Date(), email, address);
-        return "index.html";
+        try {
+            this.password = PasswordHash.createHash(password);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+        }
+//        try {
+            Customer customer = facade.createCustomer(name, lastName, birthDate, email, password);
+        if (customer == null) {
+            return "error.html";
+        }
+//        } catch (EJBTransactionRolledbackException e) {
+//            return "error.html";
+//        }
+        return "jumbo.html";
     }
 
     public String getCustomer(String name) {

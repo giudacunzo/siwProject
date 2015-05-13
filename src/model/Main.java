@@ -1,9 +1,13 @@
 package model;
 
+import sun.security.util.Password;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -37,12 +41,16 @@ public class Main {
 		Address address = new Address("vasca navale", "Roma", "Italia", 875L, "boh");
 		User u1 = new Customer("fabio","sola",new Date(),"ciao@ciao.it", address);
         u1.setRegistrationDate(new Date());
+        u1.setPassword("pippopluto");
 		User u3 = new Customer("giulio","verdi",new Date(),"ciao@boh.it", address);
         u3.setRegistrationDate(new Date());
+        u3.setPassword("pippopaperino");
 		User u2 = new Administrator("giuseppe","garibaldi",new Date(),"a@it.it", new Address("pincherle","Roma","Italia",456L,"nonso"));
         u2.setRegistrationDate(new Date());
-        User u4 = new Customer("giulio","verdi",new Date(),"ciao@boh.it", address);
+        u2.setPassword("plutopippo");
+        User u4 = new Customer("giulio","verdi",new Date(),"ciaociao@boh.it", address);
         u4.setRegistrationDate(new Date());
+        u4.setPassword("peppepluto");
 
         Provider provider = new Provider(providedProducts,"545346","656868",address,"ciao@hi.it");
         List<Provider> providers = new ArrayList<>();
@@ -83,6 +91,17 @@ public class Main {
 		em.persist(u3);
         em.persist(u4);
 		tx.commit();
+
+        try {
+            String encpass = PasswordHash.createHash("pippopluto");
+            System.out.println(encpass);
+            System.out.println(PasswordHash.validatePassword("pippopluto",encpass));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+        }
+
 
 		em.close();
 		emf.close();

@@ -17,6 +17,7 @@
 
         <properties>
             <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)" />
+            <property name="openjpa.Log" value="File=/tmp/org.apache.openjpa.log, DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=WARN"/>
         </properties>
 
 

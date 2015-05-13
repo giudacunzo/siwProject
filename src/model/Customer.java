@@ -16,6 +16,10 @@ public class Customer extends User{
         super(name, lastname, birthDate, email, address);
     }
 
+    public Customer(String name, String lastname, Date birthDate, Date registrationDate, String email, String password) {
+        super(name, lastname, birthDate, registrationDate, email, password);
+    }
+
     public Customer() {
     }
 

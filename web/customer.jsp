@@ -16,11 +16,11 @@
 <f:view>
 
   <h:form styleClass="form">
-    <h:commandButton value="Submit" styleClass="btn btn-primary" action="#{customerControllerBean.getCustomer(\"bbb\")}"/>
+    <h:commandButton value="Submit" styleClass="btn btn-primary" action="#{customerController.getCustomer(\"bbb\")}"/>
   </h:form>
-  <p>${customerControllerBean.cust.name}</p>
-  <p>${customerControllerBean.cust.lastname}</p>
-  <p>${customerControllerBean.cust.email}</p>
+  <p>${customerController.cust.name}</p>
+  <p>${customerController.cust.lastname}</p>
+  <p>${customerController.cust.email}</p>
 </f:view>
 </body>
 </html>

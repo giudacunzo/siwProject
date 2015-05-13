@@ -1,6 +1,11 @@
 #contenitoreForm{
-    border: solid whitesmoke 1px;
+    border: solid #a3c8c8 1px;
     margin-top: 8em;
+    border-radius: 5%;
+}
+
+body {
+    background-color: #ffffff;
 }
 
 .form {

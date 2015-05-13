@@ -17,11 +17,15 @@ public class CustomerFacade {
     @PersistenceContext(unitName = "siwprj")
     private EntityManager em;
 
-    public Customer createCustomer(String name, String lastname, Date birthDate, String email, Address address){
-        Customer customer = new Customer(name, lastname, birthDate, email, null); /*di prova*/
-        customer.setRegistrationDate(birthDate); /*di prova*/
-        this.em.persist(customer);
-        this.em.flush();
+    public Customer createCustomer(String name, String lastname, Date birthDate, String email, String pass){
+        Customer customer = null;
+        Query query = em.createQuery("select c.email from Customer c where c.email = :email");
+        query.setParameter("email", email);
+        boolean newEmailInserted = query.getResultList().isEmpty();
+        if(newEmailInserted) {
+            customer = new Customer(name, lastname, birthDate, new Date(), email, pass);
+            this.em.persist(customer);
+        }
         return customer;
     }
 
