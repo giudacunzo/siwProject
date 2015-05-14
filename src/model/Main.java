@@ -1,6 +1,6 @@
 package model;
 
-import sun.security.util.Password;
+import Utility.PasswordHash;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

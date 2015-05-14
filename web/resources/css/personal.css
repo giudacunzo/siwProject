@@ -1,11 +1,17 @@
 #contenitoreForm{
-    border: solid #a3c8c8 1px;
+    border: solid #a3c8c8 2px;
     margin-top: 8em;
     border-radius: 5%;
 }
 
 body {
     background-color: #ffffff;
+}
+
+#messageContainer{
+    text-align: center;
+    padding-top: 2em;
+    font-size: 2em;
 }
 
 .form {

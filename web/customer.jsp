@@ -16,7 +16,7 @@
 <f:view>
 
   <h:form styleClass="form">
-    <h:commandButton value="Submit" styleClass="btn btn-primary" action="#{customerController.getCustomer(\"bbb\")}"/>
+    <h:commandButton value="Submit" styleClass="btn btn-primary" action="#{customerController.retrieveCustomer(\"bbb\")}"/>
   </h:form>
   <p>${customerController.cust.name}</p>
   <p>${customerController.cust.lastname}</p>

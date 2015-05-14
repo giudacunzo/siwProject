@@ -3,16 +3,24 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core">
-<head lang="en">
+<h:head lang="en">
     <title>Join Us</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/personal.css"/>
+    <h:outputStylesheet name="bootstrap/css/bootstrap.min.css"/>
+    <h:outputStylesheet name="css/personal.css"/>
+</h:head>
 
-</head>
-<body>
+<h:body>
+
+
+
 <f:view>
+
+    <ui:insert name="header">
+        <ui:include src="template/navbar.xhtml"/>
+    </ui:insert>
+
     <div class="row">
         <div id="contenitoreForm" class="container col-md-offset-4 col-md-4">
             <h:form styleClass="form">
@@ -54,8 +62,18 @@
             </h:form>
         </div>
     </div>
+    <div id="messageContainer" class="container col-md-4 col-md-offset-4">
+        <h:outputText value="#{customerController.message2User}" styleClass="alert-success"/>
+        <h:outputText value="#{customerController.error2User}" styleClass="alert-danger"/>
+    </div>
 </f:view>
-<!-- Latest compiled and minified JavaScript -->
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-</body>
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="text/javascript" src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</h:body>
 </html>
