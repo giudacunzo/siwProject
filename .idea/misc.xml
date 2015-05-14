@@ -41,6 +41,9 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <type id="javaeeApplication" />
+  </component>
   <component name="IdProvider" IDEtalkID="249498BD409047D01DA8F4125629AE8D" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />

@@ -2,24 +2,46 @@
 <persistence version="2.0"
              xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-    <persistence-unit name="siwprj" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="siwprj" transaction-type="JTA" >
+        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>java:openejb/Resource/postgresqldatabase</jta-data-source>
         <class>model.Address</class>
         <class>model.User</class>
         <class>model.Product</class>
         <class>model.Provider</class>
         <class>model.OrderLine</class>
         <class>model.Order</class>
-        <class>model.Administrator</class>
         <class>model.Customer</class>
+        <class>model.Administrator</class>
+
+
         <properties>
-            <property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver" />
-            <property name="openjpa.ConnectionUserName" value="postgres" />
-            <property name="openjpa.ConnectionPassword" value="postgres" />
-            <property name="openjpa.ConnectionURL" value="jdbc:postgresql://localhost:5432/siwPrj" />
-            <property name="openjpa.jdbc.DBDictionary" value="postgres" />
-            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(SchemaAction=add,SchemaAction=deleteTableContents,ForeignKeys=true)" />
-            <property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE"/>
-            <property name="openjpa.jdbc.MappingDefaults" value="ForeignKeyDeleteAction=restrict,JoinForeignKeyDeleteAction=restrict"/>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)" />
+            <property name="openjpa.Log" value="File=/tmp/org.apache.openjpa.log, DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=WARN"/>
+        </properties>
+
+
+    </persistence-unit>
+
+    <persistence-unit name="siwprjtest" transaction-type="RESOURCE_LOCAL">
+        <class>model.Address</class>
+        <class>model.User</class>
+        <class>model.Product</class>
+        <class>model.Provider</class>
+        <class>model.OrderLine</class>
+        <class>model.Order</class>
+        <class>model.Customer</class>
+        <class>model.Administrator</class>
+
+        <properties>
+        <property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver" />
+        <property name="openjpa.ConnectionUserName" value="postgres" />
+        <property name="openjpa.ConnectionPassword" value="postgres" />
+        <property name="openjpa.ConnectionURL" value="jdbc:postgresql://localhost:5432/siwprj" />
+        <property name="openjpa.jdbc.DBDictionary" value="postgres" />
+        <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(SchemaAction=add,SchemaAction=deleteTableContents,ForeignKeys=true)" />
+        <property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE"/>
+        <property name="openjpa.jdbc.MappingDefaults" value="ForeignKeyDeleteAction=restrict,JoinForeignKeyDeleteAction=restrict"/>
         </properties>
     </persistence-unit>
 </persistence>
