@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<f:view>
+    <f:view>
+        <div class="row">
+            <div id="contenitoreForm" class="container col-md-offset-4 col-md-4">
+                <h:form styleClass="form">
+                    <div class="form-group">
+                        <h:outputLabel for="name" value="Name"/>
+                        <h:inputText id="name" styleClass="form-control" label="Name" value="#{productController.name}"
+                                     required="true"/>
+                        <h:message for="name" styleClass="alert-danger"/>
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel for="code" value="Code"/>
+                        <h:inputText id="code" styleClass="form-control" label="code" value="#{productController.code}"
+                                     required="true"/>
+                        <h:message for="code" styleClass="alert-danger"/>
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel for="description" value="Description"/>
+                        <h:inputText id="description" styleClass="form-control" label="description" value="#{productController.description}"
+                                     required="true"/>
+                        <h:message for="description" styleClass="alert-danger"/>
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel for="price" value="price"/>
+                        <h:inputText id="price" styleClass="form-control" label="price" value="#{productController.price}"
+                                     required="true"
+                                     converter="javax.faces.Float"
+                                     converterMessage="il prezzo deve essere un float!"
+                                />
+                        <h:message for="price" styleClass="alert-danger"/>
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel for="quantity" value="Quantity"/>
+                        <h:inputSecret id="quantity" styleClass="form-control" label="quantity" value="#{productController.quantity}"
+                                       required="true" />
+                        <h:message for="quantity" styleClass="alert-danger"/>
+                    </div>
+                    <h:commandButton value="Submit" styleClass="btn btn-primary" action="#{productController.createProduct}"/>
+
+                </h:form>
+            </div>
+        </div>
+    </f:view>
+
+</f:view>
+</html>

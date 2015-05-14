@@ -33,6 +33,8 @@ public class Product {
     private List<OrderLine> orderlineList;
 
 
+    public Product() {
+    }
     public Product(String name, String code, String description, Float price, Integer remainingQuantity, List<Provider> providers) {
         this.name = name;
         this.code = code;
@@ -42,8 +44,6 @@ public class Product {
         this.providers = providers;
     }
 
-    public Product() {
-    }
 
     public Long getId() {
         return Id;
